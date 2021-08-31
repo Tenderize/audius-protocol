@@ -66,12 +66,9 @@ module.exports = {
       gasPrice: web3.utils.toWei('20', 'gwei')
     },
     development: {
-      host: '127.0.0.1' // Localhost (default: none)
-      ,port: 8546 // Standard Ethereum port (default: none)
-      ,network_id: '*' // Any network (default: none)
-      ,gas: 8000000 // 8,000,000 is a proxy for block gas limit even though it is now much higher
-      // recommended as a ganache performance improvement https://github.com/trufflesuite/truffle/issues/3522
-      ,disableConfirmationListener: true
+      host: '127.0.0.1', // Localhost (default: none)
+      port: 8545, // Standard Ethereum port (default: none)
+      network_id: '*' // Any network (default: none)
     },
     test_local: {
       host: '127.0.0.1'
