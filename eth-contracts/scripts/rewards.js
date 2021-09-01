@@ -35,7 +35,7 @@ async function rewards() {
     const serviceType = web3.utils.utf8ToHex('discovery-provider')
     let random = (Math.random() + 1).toString(36).substring(7);
     const dummyEndpoint = `http://${random}.com`
-    const amount = web3.utils.toWei('0.0001')
+    const amount = web3.utils.toWei('0.001')
     await audiusToken.approve(stakingAddress, amount,  { from: account })
     await spf.register(serviceType, dummyEndpoint, amount, account,  { from: account })
     await cm.initiateRound({ from: account })

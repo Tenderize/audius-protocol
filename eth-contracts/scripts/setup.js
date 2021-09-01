@@ -22,7 +22,7 @@ async function setup() {
 
     const serviceType = web3.utils.utf8ToHex('discovery-provider')
     const dummyEndpoint = 'http://testxyz.com'
-    const amount = web3.utils.toWei('1000000')
+    const amount = web3.utils.toWei('500000000')
     await audiusToken.approve(stakingAddress, amount,  { from: account })
     await spf.register(serviceType, dummyEndpoint, amount, account,  { from: account })
     console.log('AUDIO.balanceOf', (await audiusToken.balanceOf(account)).toString())
@@ -44,7 +44,9 @@ async function delegate() {
 
 async function transfer() {
     const audiusToken = await AudiusToken.at(tokenAddress)
-    await audiusToken.transfer('0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266', web3.utils.toWei('100000000'),  { from: account })
+    await audiusToken.transfer('0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266', web3.utils.toWei('50000000'),  { from: account })
+    console.log((await audiusToken.balanceOf(account)).toString())
+    console.log((await audiusToken.balanceOf('0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266')).toString())
 }
 
 async function getAddresses() {
@@ -57,11 +59,9 @@ async function getAddresses() {
 module.exports = async function(callback) {
   try {
     await setup()
-    // await delegate()
-    // await checkStake()
+    await delegate()
     await getAddresses()
     await transfer()
-    await checkStake()
   } catch (e) {
     // truffle exec <script> doesn't throw errors, so handling it in a verbose manner here
     console.log(e)
