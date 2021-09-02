@@ -1,9 +1,8 @@
-const {promisify} = require("es6-promisify");
 const addresses = require('../migrations/migration-output.json')
 const tokenAddress = addresses.tokenAddress
 const registryAddress = addresses.registryAddress
-const account = process.env.ACCOUNT || '0x71be63f3384f5fb98995898a86b02fb2426c5788'
-const tenderizer = process.env.TENDERIZER || '0x68B1D87F95878fE05B998F19b66F4baba5De1aed'
+const account = process.env.ACCOUNT || '0xe426ad6DDF3905de9D798f49cb19d6E9A6a3335f'
+const tenderizer = process.env.TENDERIZER || '0xF300f1ebd7fd666D64Befb6026c88F0ccC486850'
 
 const AudiusToken = artifacts.require('AudiusToken')
 const Staking = artifacts.require('Staking')

@@ -2,7 +2,7 @@ const {promisify} = require("es6-promisify");
 const addresses = require('../migrations/migration-output.json')
 const tokenAddress = addresses.tokenAddress
 const registryAddress = addresses.registryAddress
-const account = process.env.ACCOUNT || '0x71be63f3384f5fb98995898a86b02fb2426c5788'
+const account = process.env.ACCOUNT || '0xe426ad6DDF3905de9D798f49cb19d6E9A6a3335f'
 
 const AudiusToken = artifacts.require('AudiusToken')
 const Staking = artifacts.require('Staking')
@@ -42,12 +42,12 @@ async function delegate() {
     console.log('Delegated Stake !! AUDIO.balanceOf =', (await audiusToken.balanceOf(account)).toString())
 }
 
-async function transfer() {
-    const audiusToken = await AudiusToken.at(tokenAddress)
-    await audiusToken.transfer('0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266', web3.utils.toWei('50000000'),  { from: account })
-    console.log((await audiusToken.balanceOf(account)).toString())
-    console.log((await audiusToken.balanceOf('0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266')).toString())
-}
+// async function transfer() {
+//     const audiusToken = await AudiusToken.at(tokenAddress)
+//     await audiusToken.transfer('0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266', web3.utils.toWei('50000000'),  { from: account })
+//     console.log((await audiusToken.balanceOf(account)).toString())
+//     console.log((await audiusToken.balanceOf('0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266')).toString())
+// }
 
 async function getAddresses() {
     const registry = await Registry.at(registryAddress)
@@ -59,9 +59,9 @@ async function getAddresses() {
 module.exports = async function(callback) {
   try {
     await setup()
-    await delegate()
+    // await delegate()
     await getAddresses()
-    await transfer()
+    // await transfer()
   } catch (e) {
     // truffle exec <script> doesn't throw errors, so handling it in a verbose manner here
     console.log(e)

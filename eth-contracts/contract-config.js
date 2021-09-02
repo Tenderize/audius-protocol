@@ -48,5 +48,13 @@ module.exports = {
     wormholeAddress: null,
     antiAbuseOracleAddresses: null,
     solanaRecipientAddress: null
-  }
+  },
+  'rinkeby': {
+    proxyDeployerAddress: '0xe426ad6DDF3905de9D798f49cb19d6E9A6a3335f',
+    proxyAdminAddress: '0xe426ad6DDF3905de9D798f49cb19d6E9A6a3335f',
+    guardianAddress: '0xe426ad6DDF3905de9D798f49cb19d6E9A6a3335f',
+    wormholeAddress: null, // deploy mock
+    antiAbuseOracleAddresses: ['0xe426ad6DDF3905de9D798f49cb19d6E9A6a3335f'],
+    solanaRecipientAddress: null
+  },
 }

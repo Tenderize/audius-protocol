@@ -65,6 +65,18 @@ module.exports = {
       network_id: liveNetworkId,
       gasPrice: web3.utils.toWei('20', 'gwei')
     },
+    rinkeby: {
+      provider: function() {
+        return new HDWalletProvider(
+          process.env.PRIV_KEY,
+          `https://rinkeby.infura.io/v3/${process.env.API_KEY}`
+        )
+      },
+      network_id: 4,
+      gas: 12000000,
+      gasPrice: 10000000000, // 10 gwei
+      skipDryRun: true
+    },
     development: {
       host: '127.0.0.1', // Localhost (default: none)
       port: 8545, // Standard Ethereum port (default: none)
