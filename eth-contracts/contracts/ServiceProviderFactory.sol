@@ -1097,14 +1097,14 @@ contract ServiceProviderFactory is InitializableV2 {
      */
     function _validateBalanceInternal(address _serviceProvider, uint256 _amount) internal view
     {
-        // require(
-        //     _amount <= spDetails[_serviceProvider].maxAccountStake,
-        //     "ServiceProviderFactory: Maximum stake amount exceeded"
-        // );
-        // require(
-        //     spDetails[_serviceProvider].deployerStake >= spDetails[_serviceProvider].minAccountStake,
-        //     "ServiceProviderFactory: Minimum stake requirement not met"
-        // );
+        require(
+            _amount <= spDetails[_serviceProvider].maxAccountStake,
+            "ServiceProviderFactory: Maximum stake amount exceeded"
+        );
+        require(
+            spDetails[_serviceProvider].deployerStake >= spDetails[_serviceProvider].minAccountStake,
+            "ServiceProviderFactory: Minimum stake requirement not met"
+        );
     }
 
     /**

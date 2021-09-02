@@ -113,7 +113,7 @@ contract ClaimsManager is InitializableV2 {
 
         audiusToken = ERC20Mintable(_tokenAddress);
 
-        fundingRoundBlockDiff = 0;
+        fundingRoundBlockDiff = 46523;
         fundingAmount = 1342465753420000000000000; // 1342465.75342 AUDS
         roundNumber = 0;
 

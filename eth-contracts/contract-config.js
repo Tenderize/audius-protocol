@@ -2,11 +2,11 @@
 // name to other params
 module.exports = {
   'development': {
-    proxyDeployerAddress: null,
-    proxyAdminAddress: null,
-    guardianAddress: null,
+    proxyDeployerAddress: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
+    proxyAdminAddress: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
+    guardianAddress: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
     wormholeAddress: null,
-    antiAbuseOracleAddresses: null,
+    antiAbuseOracleAddresses: ['0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'],
     solanaRecipientAddress: null
   },
   'test_local': {
