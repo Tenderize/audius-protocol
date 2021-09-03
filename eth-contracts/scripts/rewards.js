@@ -1,7 +1,7 @@
 const addresses = require('../migrations/migration-output.json')
 const tokenAddress = addresses.tokenAddress
 const registryAddress = addresses.registryAddress
-const account = process.env.ACCOUNT || '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'
+const account = process.env.ACCOUNT || '0xe426ad6DDF3905de9D798f49cb19d6E9A6a3335f'
 const tenderizer = process.env.TENDERIZER || '0x36b58F5C1969B7b6591D752ea6F5486D069010AB'
 
 const AudiusToken = artifacts.require('AudiusToken')
