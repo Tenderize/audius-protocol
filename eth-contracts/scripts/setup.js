@@ -30,7 +30,17 @@ async function setup() {
         _lib.toBN(0),
         'updateFundingRoundBlockDiff(uint256)',
         _lib.abiEncode(['uint256'], [0]),
-        { from: account })
+        { from: account }
+      )
+
+    // updateFundingAmount for lower rewards
+    await gov.guardianExecuteTransaction(
+      cmKey, 
+      _lib.toBN(0),
+      'updateFundingAmount(uint256)',
+      _lib.abiEncode(['uint256'], [ _lib.audToWei(100) ]),
+      { from: account }
+    )
 
     const serviceType = web3.utils.utf8ToHex('creator-node')
     const dummyEndpoint = 'http://testxyz.com'
