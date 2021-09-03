@@ -2,7 +2,7 @@ const _lib = require('../utils/lib')
 const addresses = require('../migrations/migration-output.json')
 const tokenAddress = addresses.tokenAddress
 const registryAddress = addresses.registryAddress
-const account = process.env.ACCOUNT || '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'
+const account = process.env.ACCOUNT || '0xe426ad6DDF3905de9D798f49cb19d6E9A6a3335f'
 
 const AudiusToken = artifacts.require('AudiusToken')
 const Staking = artifacts.require('Staking')
