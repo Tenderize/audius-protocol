@@ -1,4 +1,4 @@
-const {promisify} = require("es6-promisify");
+// const {promisify} = require("es6-promisify");
 const addresses = require('../migrations/migration-output.json')
 const tokenAddress = addresses.tokenAddress
 const registryAddress = addresses.registryAddress
